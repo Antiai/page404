@@ -1,0 +1,25 @@
+// BREAKPOINTS
+@minWidth: 320px;
+@tabletWidth: 768px;
+@desktopWidth: 1150px;
+
+// bound variables
+@tabletBeforeWidth: (@tabletWidth - 1px);
+@desktopBeforeWidth: (@desktopWidth - 1px);
+
+// MEDIA CONDITIONS
+@tablet: ~"screen and (min-width: @{tabletWidth})";
+@desktop: ~"screen and (min-width: @{desktopWidth})";
+
+@mobileOnly: ~"screen and (max-width: @{tabletBeforeWidth     })";
+@tabletOnly: ~"screen and (min-width: @{tabletWidth}) and (max-width: @{desktopBeforeWidth})";
+@mobileAndTablet: ~"screen and (max-width: @{desktopBeforeWidth})";
+
+// offsets
+@mobileSideOffset: 25px;
+@tabletSideOffset: 35px;
+
+// #colors
+@white: #fff;
+@black: #000;
+@almostblack: #262626;

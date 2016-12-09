@@ -1,0 +1,41 @@
+{
+  "name": "page404",
+  "version": "0.0.1",
+  "description": "Page 404 for Beaty High",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Umbrella-Web",
+
+  "bugs": {
+   "url": ""
+ },
+ "homepage": "",
+ "devDependencies": {
+   "autoprefixer": "^6.4.1",
+   "css-mqpacker": "^5.0.1",
+   "grunt": "^1.0.1",
+   "grunt-browser-sync": "^2.2.0",
+   "grunt-contrib-clean": "^1.0.0",
+   "grunt-contrib-copy": "^1.0.0",
+   "grunt-contrib-imagemin": "^1.0.1",
+   "grunt-contrib-less": "^1.4.0",
+   "grunt-contrib-uglify": "^2.0.0",
+   "grunt-contrib-watch": "^1.0.0",
+   "grunt-csso": "^2.0.1",
+   "grunt-postcss": "^0.8.0",
+   "grunt-text-replace": "^0.4.0",
+   "load-grunt-tasks": "^3.5.2"
+ },
+ "scripts": {
+   "build": "grunt build",
+   "start": "grunt deploy && grunt serve"
+ },
+ "engines": {
+   "node": "6.9.1"
+ },
+ "dependencies": {
+   "normalize.css": "^4.2.0"
+ }
+}
