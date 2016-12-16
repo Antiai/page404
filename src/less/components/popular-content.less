@@ -1,0 +1,270 @@
+.popular-content {
+  border-bottom: 1px solid @contentBorderColor;
+
+  @media @mobileOnly {
+    padding-bottom: 27px;
+  }
+
+  @media @tablet {
+    padding-bottom: 25px;
+  }
+
+  &-wrapper {
+    @media @mobileOnly {
+      padding-right: @mobileSideOffset;
+      padding-left: @mobileSideOffset;
+    }
+
+    @media @tablet {
+      display: flex;
+      align-content: stretch;
+      align-items: stretch;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-right: @tabletSideOffset;
+      padding-left: @tabletSideOffset;
+    }
+
+    @media @desktop {
+      max-width: @maxContentWidth;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &-item {
+    @media @mobileOnly {
+      margin-bottom: 17px;
+    }
+
+    @media @tabletOnly {
+      flex-basis: 40%;
+      margin-bottom: 22px;
+    }
+
+    @media @tablet {
+      flex-grow: 1;
+    }
+
+    @media @desktop {
+      flex-basis: 30%;
+      max-width: 311px;
+      margin-bottom: 18px;
+    }
+
+    &:nth-child(2n) {
+      @media @tabletOnly {
+        margin-left: 25px;
+      }
+    }
+
+    &:not(:nth-child(3n+1)) {
+      @media @desktop {
+        margin-left: 25px;
+      }
+    }
+  }
+
+  &-container {
+    margin: 0;
+    border: 1px solid @articleBorderColor;
+  }
+
+  &-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &-description {
+    position: relative;
+    padding-top: 5px;
+    border-right: 1px solid @articleBorderColor;
+    border-bottom: 1px solid @articleBorderColor;
+    border-left: 1px solid @articleBorderColor;
+
+    @media @mobileOnly {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
+    @media @tabletOnly {
+      padding-right: 21px;
+      padding-left: 21px;
+    }
+
+    @media @mobileAndTablet {
+      padding-bottom: 11px;
+    }
+
+    @media @desktop {
+      padding-right: 17px;
+      padding-bottom: 14px;
+      padding-left: 17px;
+    }
+  }
+
+  &-title {
+    font-family: "Avenir Next LT Pro", "Tahoma", sans-serif;
+    line-height: 20px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+
+    @media @mobileOnly {
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    @media @tabletOnly {
+      font-size: 16px;
+      margin-top: 17px;
+    }
+
+    @media @desktop {
+      font-size: 14px;
+      margin-top: 14px;
+    }
+  }
+
+  &-link {
+    display: block;
+    color: inherit;
+
+    &-slideshow::before {
+      display: inline-block;
+      width: 12px;
+      height: 10px;
+      margin-right: 8px;
+      margin-bottom: 4px;
+      content: "";
+      vertical-align: middle;
+      background-image: url("../img/icons/icon-slideshow.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &-link-arrow {
+    display: block;
+    color: inherit;
+
+    @media @mobileOnly {
+      width: 220px;
+    }
+
+    @media @tablet {
+      max-width: 270px;
+    }
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+
+
+      @media @mobileOnly {
+        right: 16px;
+        bottom: 31px;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-left: 9px solid @black;
+      }
+
+      @media @tablet {
+        right: 20px;
+        bottom: 22px;
+        border-top: 4px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-left: 10px solid @black;
+      }
+    }
+  }
+
+  &-text {
+    margin-bottom: 0;
+
+    @media @mobileOnly {
+      font-size: 12px;
+      line-height: 17px;
+      margin-top: 5px;
+    }
+
+    @media @tabletOnly {
+      font-size: 15px;
+      line-height: 22px;
+      margin-top: 8px;
+    }
+
+    @media @mobileAndTablet {
+      padding-right: 30px;
+    }
+
+    @media @desktop {
+      font-size: 14px;
+      line-height: 18px;
+      margin-top: 7px;
+      padding-right: 21px;
+    }
+  }
+
+  &-load-btn {
+    font-family: "Avenir Next LT Pro", "Tahoma", sans-serif;
+    font-weight: bold;
+    line-height: 20px;
+    position: relative;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-transform: uppercase;
+    color: @loadBtnTxtColor;
+    border: none;
+    background-color: transparent;
+    background-image: url("../img/backgrounds/bg-btn-load-more.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media @mobileOnly {
+      font-size: 13px;
+      width: 190px;
+      min-height: 59px;
+      margin-top: 29px;
+      padding-top: 10px;
+    }
+
+    @media @tabletOnly {
+      margin-top: 5px;
+    }
+
+    @media @tablet {
+      font-size: 16px;
+      width: 241px;
+      min-height: 75px;
+      padding-left: 10px;
+    }
+
+    @media @desktop {
+      margin-top: 12px;
+    }
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+
+      @media @mobileOnly {
+        right: 50px;
+        bottom: 24px;
+        border-top: 8px solid @loadBtnArrowColor;
+        border-right: 3px solid transparent;
+        border-left: 3px solid transparent;
+      }
+
+      @media @tablet {
+        right: 61px;
+        bottom: 36px;
+        border-top: 9px solid @loadBtnArrowColor;
+        border-right: 3px solid transparent;
+        border-left: 4px solid transparent;
+      }
+    }
+  }
+}

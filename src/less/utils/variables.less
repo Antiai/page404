@@ -1,25 +1,50 @@
 // BREAKPOINTS
 @minWidth: 320px;
+@middleWidth: 640px;
 @tabletWidth: 768px;
+@maxContentWidth: 1024px;
 @desktopWidth: 1150px;
 
 // bound variables
+@beforeMiddleWidth: (@middleWidth - 1px);
 @tabletBeforeWidth: (@tabletWidth - 1px);
+@maxContentBeforeWidth: (@maxContentWidth - 1px);
 @desktopBeforeWidth: (@desktopWidth - 1px);
 
 // MEDIA CONDITIONS
 @tablet: ~"screen and (min-width: @{tabletWidth})";
-@desktop: ~"screen and (min-width: @{desktopWidth})";
+@desktop: ~"screen and (min-width: @{maxContentWidth})";
 
-@mobileOnly: ~"screen and (max-width: @{tabletBeforeWidth     })";
-@tabletOnly: ~"screen and (min-width: @{tabletWidth}) and (max-width: @{desktopBeforeWidth})";
-@mobileAndTablet: ~"screen and (max-width: @{desktopBeforeWidth})";
+@mobileOnly: ~"screen and (max-width: @{tabletBeforeWidth})";
+@middleOnly: ~"screen and (max-width: @{beforeMiddleWidth})";
+@tabletOnly: ~"screen and (min-width: @{tabletWidth}) and (max-width: @{maxContentBeforeWidth})";
+@middle: ~"screen and (min-width: @{middleWidth})";
+@mobileAndTablet: ~"screen and (max-width: @{maxContentBeforeWidth})";
+@middleToDesktop: ~"screen and (min-width: @{middleWidth}) and (max-width: @{maxContentBeforeWidth})";
+@beforeDesktop: ~"screen and (max-width: @{maxContentBeforeWidth})";
 
-// offsets
-@mobileSideOffset: 25px;
-@tabletSideOffset: 35px;
+// Offsets
+@mobileSideOffset: 17px;
+@tabletSideOffset: 20px;
+@desktopSideOffset: 115px;
 
-// #colors
+// #Colors
 @white: #fff;
 @black: #000;
-@almostblack: #262626;
+@almostBlackDarker: #101010;
+@almostBlack: #262626;
+@veryDarkGray: #4b4b4b;
+@veryDarkGrayLighter: #6a6a6a;
+@darkGray: #8a8a8a;
+@gray: #b5b5b5;
+@lightGrayDarker: #c9c9c9;
+@lightGray: #d8d8d8;
+@lightGrayLighter: #dbdbdb;
+@veryLightGrayDarker: #e4e4e4;
+@veryLightGray: #e8e8e8;
+@mostlyWhiteGray: #fbfbfb;
+@strongRed: #cb2028;
+@stongRedDarker: #b61f26;
+@vividPink: #fc0a57;
+
+@shadowFadeValue: 60%;

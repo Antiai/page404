@@ -1,0 +1,22 @@
+.share-btn {
+  position: absolute;
+  right: 11px;
+  bottom: 11px;
+  display: none;
+  width: 56px;
+  height: 54px;
+  background-image: linear-gradient(135deg, @pinterestBtnLightBackgroundColor, @pinterestBtnLightBackgroundColor 50%, @pinterestBtnDarkBackgroundColor 50%);
+  background-repeat: no-repeat;
+
+  &-hover {
+    display: block;
+  }
+
+  &-icon {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    fill: @white;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}

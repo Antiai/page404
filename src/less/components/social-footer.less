@@ -1,0 +1,42 @@
+.social-footer {
+  padding-bottom: 39px;
+
+  @media @desktop {
+    padding-right: 77px;
+    padding-left: 77px;
+  }
+
+  &-caption {
+    .addFooterCaptionStyle();
+
+    @media @tabletOnly {
+      margin-bottom: 7px;
+    }
+
+    @media @desktop {
+      margin-bottom: 12px;
+    }
+  }
+
+  &-items {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-icon {
+    fill: @socialFooterIconFill;
+    width: auto;
+
+    @media @tabletOnly {
+      height: 12px;
+    }
+
+    @media @desktop {
+      height: 21px;
+    }
+  }
+}

@@ -7,7 +7,7 @@
 body {
   background-color: @bodyBackground;
   color: @txtColor;
-  font-family: "Avenir Next LT Pro Regular", "Tahoma", sans-serif;
+  font-family: "Avenir Next LT Pro", "Tahoma", sans-serif;
   font-size: 14px;
   line-height: 1.6em;
   min-width: @minWidth;
@@ -15,4 +15,24 @@ body {
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.mobile-hidden {
+  @media @mobileOnly {
+    display: none;
+  }
+}
+
+.mobile-displayed {
+  @media @tablet {
+    display: none;
+  }
 }

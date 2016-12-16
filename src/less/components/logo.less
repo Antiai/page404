@@ -1,0 +1,22 @@
+.logo {
+  margin-right: auto;
+  z-index: 2;
+
+  @media @mobileOnly {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  &-image {
+    display: block;
+    height: auto;
+
+    @media @mobileOnly {
+      width: 117px;
+    }
+
+    @media @tablet {
+      width: 236px;
+    }
+  }
+}

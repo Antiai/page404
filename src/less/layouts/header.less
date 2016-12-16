@@ -1,0 +1,37 @@
+.header {
+  .addHeaderPaper();
+
+  position: relative;
+  background-color: @headerBackgroundColor;
+
+
+  &-top-wrapper {
+    color: @headerTopMenuTxtColor;
+    border-bottom: 1px solid @headerTopMenuDividerColor;
+
+    @media @mobileOnly {
+      display: none;
+    }
+  }
+
+  &-container {
+    z-index: 2;
+    max-width: @maxContentWidth;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media @desktop {
+      padding-right: @tabletSideOffset;
+      padding-left: @tabletSideOffset;
+    }
+
+    &-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 4px;
+      padding-right: @tabletSideOffset;
+      padding-left: @tabletSideOffset;
+    }
+  }
+}

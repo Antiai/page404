@@ -1,0 +1,38 @@
+.service {
+  .addFooterLinkStyle();
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media @mobileOnly {
+    padding-top: 5px;
+  }
+
+  @media @tabletOnly {
+    margin-left: auto;
+    padding-top: 2px;
+  }
+
+  @media @desktop {
+    padding-top: 13px;
+  }
+
+  &-item {
+    @media @tabletOnly{
+      font-size: 9px;
+      margin-left: 23px;
+    }
+
+    @media @desktop {
+      margin-left: 13px;
+    }
+  }
+
+  &-link {
+    color: inherit;
+  }
+}

@@ -1,0 +1,105 @@
+.subscription {
+  padding-bottom: 26px;
+
+  @media @desktop {
+    padding-left: 14px;
+  }
+
+  &-fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  &-caption {
+    .addFooterCaptionStyle();
+
+    @media @tablet {
+      display: block;
+    }
+
+    @media @tablet {
+      margin-bottom: 3px;
+    }
+  }
+
+  &-wrapper {
+    @media @mobileAndTablet {
+      padding-top: 5px;
+    }
+
+    @media @desktop {
+      padding-top: 1px;
+    }
+  }
+
+  &-email {
+    display: inline-block;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    vertical-align: middle;
+    border: none;
+
+    @media @mobileOnly {
+      width: 67.6%;
+      min-height: 24px;
+    }
+
+    @media @tabletOnly {
+      width: 58.3%;
+      min-height: 26px;
+    }
+
+    @media @desktop {
+      width: 63%;
+      min-height: 27px;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-family: "Avenir Next LT Pro", "Tahoma", sans-serif;
+
+      color: @subscriptionPlaceholderColor;
+
+      @media @mobileAndTablet {
+        font-size: 11px;
+      }
+
+      @media @desktop {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-submit-btn {
+    font-family: "Avenir Black", "Tahoma", sans-serif;
+    line-height: 1em;
+    vertical-align: middle;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: @subscriptionTxtColor;
+    border: none;
+    background-color: @subscriptionSubmitBtnBackgroundColor;
+
+    @media @mobileOnly {
+      width: 20.8%;
+      min-height: 24px;
+    }
+
+    @media @tabletOnly {
+      width: 20%;
+      min-height: 26px;
+    }
+
+    @media @mobileAndTablet {
+      font-size: 9px;
+    }
+
+    @media @desktop {
+      width: 22%;
+      min-height: 27px;
+      margin-left: 23px;
+      font-size: 11px;
+    }
+  }
+}

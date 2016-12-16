@@ -1,0 +1,236 @@
+.sister-content {
+  @media @mobileOnly {
+    padding-top: 30px;
+  }
+
+  @media @tablet {
+    padding-top: 37px;
+  }
+
+  @media @desktop {
+    padding-top: 35px;
+  }
+
+  &-item {
+    @media @mobileOnly {
+      padding-top: 27px;
+    }
+
+    @media @tabletOnly {
+      padding-top: 33px;
+    }
+
+    @media @tablet {
+      flex-grow: 1;
+      flex-basis: 30%;
+    }
+
+    @media @desktop {
+      padding-top: 26px;
+    }
+
+    &:not(:first-child) {
+      @media @mobileOnly {
+        display: none;
+      }
+
+      @media @desktop {
+        margin-left: 26px;
+      }
+    }
+  }
+
+  &-wrapper {
+    @media @mobileOnly {
+      padding-right: @mobileSideOffset;
+      padding-left: @mobileSideOffset;
+    }
+
+    @media @tabletOnly {
+      padding-right: @tabletSideOffset;
+      padding-left: @tabletSideOffset;
+    }
+
+    @media @desktop {
+      padding-right: 37px;
+      padding-left: 37px;
+      max-width: @maxContentWidth;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &-caption {
+    font-family: "Kabel LT Std", "Tahoma", sans-serif;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @media @mobileOnly {
+      font-size: 25px;
+      line-height: 1em;
+      margin-bottom: 22px;
+      padding-right: @mobileSideOffset;
+      padding-left: @mobileSideOffset;
+    }
+
+    @media @tabletOnly {
+      font-size: 36px;
+      margin-bottom: 29px;
+    }
+
+    @media @tablet {
+      line-height: 40px;
+      padding-right: @tabletSideOffset;
+      padding-left: @tabletSideOffset;
+    }
+
+    @media @desktop {
+      font-size: 34px;
+      margin-bottom: 27px;
+      letter-spacing: 3px;
+    }
+  }
+
+  &-pages {
+    border: 1px solid @sisterPagesBorderColor;
+    background-color: @sisterBackgroundColor;
+
+    @media @mobileOnly {
+      box-shadow: 0 3px 8px fade(@sisterShadowColor, 95%);
+    }
+
+    @media @tablet {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      box-shadow: 0 5px 11px fade(@sisterShadowColor, 95%);
+    }
+  }
+
+  &-direct-link-wrapper {
+    text-align: center;
+
+    @media @tabletOnly {
+      min-height: 50px;
+    }
+
+    @media @desktop {
+      min-height: 29px;
+    }
+  }
+
+  &-direct-link {
+    display: inline-block;
+    vertical-align: middle;
+
+    &-beauty {
+      @media @desktop {
+        margin-top: 3px;
+      }
+    }
+  }
+
+  &-logo {
+    display: block;
+    height: auto;
+
+    &-beauty {
+      @media @tabletOnly {
+        width: 168px;
+      }
+    }
+
+    &-vivant {
+      @media @tabletOnly {
+        width: 203px;
+      }
+
+      @media @desktop {
+        width: 132px;
+      }
+    }
+
+    &-daily {
+      @media @desktop{
+        width: 87px;
+      }
+    }
+  }
+
+  &-links {
+    margin: 0;
+    padding-top: 12px;
+
+
+
+    list-style: none;
+
+    @media @mobileAndTablet{
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 41px;
+    }
+
+    @media @desktop {
+      padding-right: 18px;
+      padding-left: 18px;
+      padding-bottom: 44px;
+    }
+  }
+
+  &-link {
+    color: @sisterTxtColor;
+  }
+
+  &-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-right: auto;
+
+    margin-left: auto;
+
+    @media @mobileAndTablet {
+      margin-bottom: 11px;
+    }
+
+    @media @desktop {
+      margin-bottom: 16px;
+    }
+  }
+
+  &-title {
+    display: block;
+    padding-top: 18px;
+    padding-right: 22px;
+    padding-left: 22px;
+    color: inherit;
+
+    @media @mobileAndTablet {
+      padding-bottom: 13px;
+    }
+
+    @media @desktop {
+      padding-bottom: 17px;
+    }
+  }
+
+  &-link-container {
+    font-family: "Times New Roman", "Times", serif;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+
+    &:not(:last-child)::after {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      content: "";
+      border-bottom: 1px solid @sisterLinksDividerColor;
+      width: 68%;
+    }
+  }
+}

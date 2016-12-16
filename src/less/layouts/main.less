@@ -1,0 +1,43 @@
+.main {
+  @media @mobileOnly {
+    padding-bottom: 29px;
+  }
+
+  @media @tablet {
+    padding-bottom: 40px;
+  }
+
+  &-message {
+    font-family: "Kabel LT Std", "Tahoma", sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    @media @mobileOnly {
+      font-size: 25px;
+      line-height: 1em;
+      margin-top: 31px;
+      margin-bottom: 22px;
+      padding-right: @mobileSideOffset;
+      padding-left: @mobileSideOffset;
+    }
+
+    @media @tablet {
+      font-size: 38px;
+      line-height: 40px;
+      margin-top: 56px;
+      margin-bottom: 47px;
+      padding-right: @tabletSideOffset;
+      padding-left: @tabletSideOffset;
+    }
+
+    @media @desktop {
+      max-width: @maxContentWidth;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &-message-link {
+    color: @searchLink;
+  }
+}
