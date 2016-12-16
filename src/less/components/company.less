@@ -36,10 +36,9 @@
   }
 
   &-container {
-    min-width: 95px;
-
-    @media @mobileOnly {
-      min-width: 95px;
+    @media @mobileAndTablet{
+      min-width: 74px;
+      margin-right: 20px;
     }
 
     @media @desktop {
@@ -49,5 +48,15 @@
 
   &-link {
     .addFooterLinkStyle();
+
+    transition: opacity 200ms ease-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 0.2;
+    }
   }
 }

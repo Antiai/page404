@@ -14,6 +14,8 @@
   &-caption {
     .addFooterCaptionStyle();
 
+    font-weight: bold;
+
     @media @tablet {
       display: block;
     }
@@ -35,30 +37,40 @@
 
   &-email {
     display: inline-block;
-    padding-bottom: 3px;
     padding-left: 7px;
+    transition: background-color 150ms ease-out;
     vertical-align: middle;
     border: none;
 
     @media @mobileOnly {
+      line-height: 24px;
       width: 67.6%;
       min-height: 24px;
     }
 
     @media @tabletOnly {
+      line-height: 26px;
       width: 58.3%;
       min-height: 26px;
     }
 
     @media @desktop {
+      line-height: 27px;
       width: 63%;
       min-height: 27px;
+    }
+
+    &:focus:invalid {
+      background-color: @subscriptionEmailBackgroundColorInvalid;
+    }
+
+    &:focus:valid {
+      background-color: @subscriptionEmailBackgroundColorValid;
     }
 
     &::placeholder {
       font-family: inherit;
       font-family: "Avenir Next LT Pro", "Tahoma", sans-serif;
-
       color: @subscriptionPlaceholderColor;
 
       @media @mobileAndTablet {
@@ -74,6 +86,8 @@
   &-submit-btn {
     font-family: "Avenir Black", "Tahoma", sans-serif;
     line-height: 1em;
+    transition: box-shadow 150ms ease-out,
+    color 150ms ease-out;
     vertical-align: middle;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -84,11 +98,15 @@
     @media @mobileOnly {
       width: 20.8%;
       min-height: 24px;
+      padding-top: 8px;
+      padding-bottom: 9px;
     }
 
     @media @tabletOnly {
       width: 20%;
       min-height: 26px;
+      padding-top: 9px;
+      padding-bottom: 10px;
     }
 
     @media @mobileAndTablet {
@@ -96,10 +114,24 @@
     }
 
     @media @desktop {
+      font-size: 11px;
       width: 22%;
       min-height: 27px;
       margin-left: 23px;
-      font-size: 11px;
+      padding-top: 9px;
+      padding-bottom: 9px;
+    }
+
+    &:hover {
+      box-shadow: inset 2px 2px 2px fade(@subscriptionSubmitBtnShadowLightColor, 30%),
+      inset -2px -2px 2px fade(@subscriptionSubmitBtnShadowDarkColor, 30%);
+      color: fade(@subscriptionTxtColor, 70%);
+    }
+
+    &:active {
+      box-shadow: inset -2px -2px 2px fade(@subscriptionSubmitBtnShadowLightColor, 30%),
+      inset 2px 2px 2px fade(@subscriptionSubmitBtnShadowDarkColor, 30%);
+      color: fade(@subscriptionTxtColor, 30%);
     }
   }
 }

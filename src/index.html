@@ -23,7 +23,7 @@
     <symbol id="facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20">
       <path d="M2.55 20v-9.38H0V7.24h2.55V4.35C2.55 2.08 4.06 0 7.54 0c1.41 0 2.45.13 2.45.13L9.9 3.29s-1.06-.01-2.22-.01c-1.25 0-1.45.56-1.45 1.49v2.47H10l-.16 3.38H6.23V20H2.55z"/>
     </symbol>
-    <symbol id="google" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 16.05" width="19" height="16.05">
+    <symbol id="google" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 16.05">
       <path d="M15.78 3.22V0h-.8v3.22h-3.22v.8h3.22v3.22h.8V4.02H19v-.8h-3.22zM10.37 0h-5c-2.2 0-4.29 1.69-4.29 3.64a3.59 3.59 0 0 0 3.78 3.62h.46a2 2 0 0 0-.25.93 1.93 1.93 0 0 0 .68 1.37h-.86C2.12 9.55 0 11.31 0 13.13s2.33 2.92 5.09 2.92c3.15 0 4.89-1.79 4.89-3.58a3.47 3.47 0 0 0-1.74-3.23c-.45-.32-1.31-1.09-1.31-1.55s.15-.8 1-1.42a3.34 3.34 0 0 0 1.4-2.6A3 3 0 0 0 7.68.8h1.58zM8.64 12.16a2.22 2.22 0 0 1 .06.51c0 1.45-.94 2.59-3.62 2.59-1.91 0-3.29-1.21-3.29-2.66S3.5 10 5.41 10a4.15 4.15 0 0 1 1.24.2c1.03.73 1.78 1.14 1.99 1.96zm-3-5.41h-.06c-1.28 0-2.5-1.43-2.72-3.11S3.5.67 4.78.7s2.5 1.39 2.72 3.07-.61 2.98-1.86 2.98z"/>
     </symbol>
     <symbol id="twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 19">
@@ -46,7 +46,7 @@
             <a href="#" class="top-menu-link">StyleCaster</a>
           </li>
           <li class="top-menu-item">
-            <a href="#" class="top-menu-link">Beauty High</a>
+            <a class="top-menu-link top-menu-link-active">Beauty High</a>
           </li>
           <li class="top-menu-item">
             <a href="#" class="top-menu-link">The Vivant</a>
@@ -105,7 +105,7 @@
         <div class="menu">
           <div class="logo"><a href="#" class="logo-link"><img  class="logo-image" src="img/logo/logo-beauty-high.svg" alt="Logo Beauty High" width="232" height="62"></a></div>
           <!--  menu-items-open menu-items-js -->
-          <ul class="menu-items">
+          <ul class="menu-items menu-items-open">
             <li class="menu-item">
               <span class="menu-link-wrapper">
                 <a href="#" class="menu-link">Makeup</a>
@@ -399,35 +399,35 @@
         <section class="social-footer">
           <h2 class="social-footer-caption">Let's Connect!</h2>
           <ul class="social-footer-items">
-            <li class="social-footer-container">
+            <li class="social-footer-item">
               <a href="#" class="social-footer-link">
                 <svg class="social-footer-icon" width="22" height="25">
                   <use xlink:href="#pinterest"/>
                 </svg>
               </a>
             </li>
-            <li class="social-footer-container">
+            <li class="social-footer-item">
               <a href="#" class="social-footer-link">
                 <svg class="social-footer-icon" width="13" height="25">
                   <use xlink:href="#facebook"/>
                 </svg>
               </a>
             </li>
-            <li class="social-footer-container">
+            <li class="social-footer-item">
               <a href="#" class="social-footer-link">
                 <svg class="social-footer-icon" width="30" height="25">
                   <use xlink:href="#twitter"/>
                 </svg>
               </a>
             </li>
-            <li class="social-footer-container">
+            <li class="social-footer-item">
               <a href="#" class="social-footer-link">
                 <svg class="social-footer-icon" width="30" height="25">
                   <use xlink:href="#google"/>
                 </svg>
               </a>
             </li>
-            <li class="social-footer-container">
+            <li class="social-footer-item">
               <a href="#" class="social-footer-link">
                 <svg class="social-footer-icon" width="23" height="23">
                   <use xlink:href="#instagram"/>
@@ -438,14 +438,14 @@
         </section>
       </div>
       <div class="footer-container footer-container-grow">
-        <form class="subscription" action="" method="get">
+        <form class="subscription" action="#" method="get">
           <fieldset class="subscription-fieldset">
             <label for="email" class="subscription-caption">
               <span class="mobile-hidden">Sign Up to Get Fresh Stories</span>
               <span class="mobile-displayed">Get the Latest News in&nbsp;Your&nbsp;Inbox</span>
             </label>
             <div class="subscription-wrapper">
-              <input id="email" class="subscription-email" type="email" placeholder="Your email address">
+              <input id="email" class="subscription-email" type="email" placeholder="Your email address" required>
               <button class="subscription-submit-btn" type="submit">Submit</button>
             </div>
           </fieldset>
@@ -465,5 +465,6 @@
       </ul>
     </div>
   </footer>
+  <script defer src="js/app.js"></script>
 </body>
 </html>

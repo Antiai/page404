@@ -5,9 +5,10 @@
   justify-content: flex-start;
   min-height: 40px;
   margin: 0;
+  padding-top: 11px;
   padding-right: 0;
+  padding-bottom: 5px;
   padding-left: 0;
-  padding-top: 4px;
   list-style: none;
 
   &-item {
@@ -15,10 +16,22 @@
   }
 
   &-link {
-    display: block;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    display: block;
+    transition: color 150ms ease-out,
+    opacity 150ms ease-out;
     color: inherit;
+
+    &[href]:hover {
+      color: @headerTopMenuTxtColorHover;
+    }
+
+    &[href]:active {
+      opacity: 0.3;
+    }
+
+    &-active {
+      color: @headerTopMenuLinkActiveColor;
+    }
   }
 }

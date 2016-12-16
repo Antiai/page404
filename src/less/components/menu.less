@@ -81,9 +81,12 @@
     &-js {
       .addHeaderPaper();
 
+      @media @tabletOnly {
+        padding-bottom: 15px;
+      }
+
       @media @tablet {
         padding-top: 15px;
-        padding-bottom: 15px;
       }
 
       @media @beforeDesktop {
@@ -154,10 +157,20 @@
   &-link {
     font-weight: bold;
     color: inherit;
+    transition: opacity 200ms ease-out;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 
   &-search {
     z-index: 1;
+    transition: opacity 200ms ease-out;
 
     @media @mobileOnly {
       margin-bottom: 7px;
@@ -170,6 +183,14 @@
     @media @desktop{
       margin-top: 15px;
       margin-left: 57px;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
     }
   }
 

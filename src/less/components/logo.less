@@ -1,15 +1,26 @@
 .logo {
-  margin-right: auto;
   z-index: 2;
+  margin-right: auto;
 
   @media @mobileOnly {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 
+  &-link {
+    &:hover img {
+      opacity: 0.6;
+    }
+
+    &:active img {
+      opacity: 0.3;
+    }
+  }
+
   &-image {
     display: block;
     height: auto;
+    transition: opacity 200ms ease-out;
 
     @media @mobileOnly {
       width: 117px;

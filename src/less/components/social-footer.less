@@ -27,6 +27,18 @@
     list-style: none;
   }
 
+  &-link {
+    transition: opacity 200ms ease-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 0.2;
+    }
+  }
+
   &-icon {
     fill: @socialFooterIconFill;
     width: auto;

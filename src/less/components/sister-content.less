@@ -52,11 +52,11 @@
     }
 
     @media @desktop {
-      padding-right: 37px;
-      padding-left: 37px;
       max-width: @maxContentWidth;
       margin-right: auto;
       margin-left: auto;
+      padding-right: 37px;
+      padding-left: 37px;
     }
   }
 
@@ -124,7 +124,16 @@
 
   &-direct-link {
     display: inline-block;
+    transition: opacity 150ms ease-out;
     vertical-align: middle;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
 
     &-beauty {
       @media @desktop {
@@ -154,7 +163,7 @@
     }
 
     &-daily {
-      @media @desktop{
+      @media @desktop {
         width: 87px;
       }
     }
@@ -163,26 +172,31 @@
   &-links {
     margin: 0;
     padding-top: 12px;
-
-
-
     list-style: none;
 
-    @media @mobileAndTablet{
-      padding-left: 15px;
+    @media @mobileAndTablet {
       padding-right: 15px;
       padding-bottom: 41px;
+      padding-left: 15px;
     }
 
     @media @desktop {
       padding-right: 18px;
-      padding-left: 18px;
       padding-bottom: 44px;
+      padding-left: 18px;
     }
   }
 
   &-link {
     color: @sisterTxtColor;
+
+    &:hover span {
+      opacity: 0.6;
+    }
+
+    &:active span {
+      opacity: 0.3;
+    }
   }
 
   &-image {
@@ -190,7 +204,6 @@
     width: 100%;
     height: auto;
     margin-right: auto;
-
     margin-left: auto;
 
     @media @mobileAndTablet {
@@ -207,6 +220,7 @@
     padding-top: 18px;
     padding-right: 22px;
     padding-left: 22px;
+    transition: opacity 150ms ease-out;
     color: inherit;
 
     @media @mobileAndTablet {
@@ -226,11 +240,11 @@
 
     &:not(:last-child)::after {
       display: block;
+      width: 68%;
       margin-right: auto;
       margin-left: auto;
       content: "";
       border-bottom: 1px solid @sisterLinksDividerColor;
-      width: 68%;
     }
   }
 }

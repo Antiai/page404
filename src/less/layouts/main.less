@@ -38,6 +38,17 @@
   }
 
   &-message-link {
+    transition: color 200ms ease-out,
+    opacity 200ms ease-out;
     color: @searchLink;
+
+    &:hover {
+      color: @searchLinkHover;
+    }
+
+    &:active {
+      opacity: 0.4;
+      color: @searchLinkHover;
+    }
   }
 }
