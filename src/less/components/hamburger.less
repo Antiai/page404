@@ -29,51 +29,112 @@
     height: 17px;
 
     &-cross span {
+      animation-name: hideMiddleBrick;
+      animation-duration: 400ms;
+      animation-timing-function: ease-out;
       background-color: transparent;
 
       &::before {
         top: 0;
-        transform: rotate(45deg);
         width: 115%;
+        transform: rotate(45deg);
+        animation-name: moveUpperBrick;
+        animation-duration: 400ms;
+        animation-timing-function: ease-out;
       }
 
       &::after {
         bottom: 0;
-        transform: rotate(-45deg);
         width: 115%;
+        transform: rotate(-45deg);
+        animation-name: moveBottomBrick;
+        animation-duration: 400ms;
+        animation-timing-function: ease-out;
       }
     }
   }
 
   &-bricks {
-    height: 3px;
+    position: absolute;
+    top: 50%;
     display: block;
     width: 100%;
+    height: 3px;
     transform: translateY(-50%);
-    top: 50%;
-    position: absolute;
     background-color: @hamburgerBricksColor;
 
     &::before {
-      content: "";
-      display: block;
       position: absolute;
-      background-color: @hamburgerBricksColor;
-      width: 100%;
-      height: 3px;
       top: -7px;
       left: 0;
+      display: block;
+      width: 100%;
+      height: 3px;
+      content: "";
+      background-color: @hamburgerBricksColor;
     }
 
     &::after {
-      content: "";
-      display: block;
       position: absolute;
-      background-color: @hamburgerBricksColor;
-      width: 100%;
-      height: 3px;
       bottom: -7px;
       left: 0;
+      display: block;
+      width: 100%;
+      height: 3px;
+      content: "";
+      background-color: @hamburgerBricksColor;
     }
+  }
+}
+
+@keyframes hideMiddleBrick {
+  0% {
+    background-color: @hamburgerBricksColor;
+  }
+
+  49.5% {
+    background-color: @hamburgerBricksColor;
+  }
+
+  50% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes moveUpperBrick {
+  0% {
+    width: 100%;
+    transform: translateY(-7px) rotate(0);
+  }
+
+  50% {
+    width: 100%;
+    transform: translateY(0) rotate(0);
+  }
+
+  100% {
+    width: 115%;
+    transform: translateY(0) rotate(45deg);
+  }
+}
+
+@keyframes moveBottomBrick {
+  0% {
+    width: 100%;
+    transform: translateY(7px) rotate(0);
+  }
+
+  50% {
+    width: 100%;
+    transform: translateY(0) rotate(0);
+  }
+
+  100% {
+    width: 115%;
+    transform: translateY(0) rotate(-45deg);
   }
 }

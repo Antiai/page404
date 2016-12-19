@@ -36,6 +36,7 @@
   }
 
   &-email {
+    font-family: inherit;
     display: inline-block;
     padding-left: 7px;
     transition: background-color 150ms ease-out;
@@ -123,15 +124,15 @@
     }
 
     &:hover {
+      color: fade(@subscriptionTxtColor, 70%);
       box-shadow: inset 2px 2px 2px fade(@subscriptionSubmitBtnShadowLightColor, 30%),
       inset -2px -2px 2px fade(@subscriptionSubmitBtnShadowDarkColor, 30%);
-      color: fade(@subscriptionTxtColor, 70%);
     }
 
     &:active {
+      color: fade(@subscriptionTxtColor, 30%);
       box-shadow: inset -2px -2px 2px fade(@subscriptionSubmitBtnShadowLightColor, 30%),
       inset 2px 2px 2px fade(@subscriptionSubmitBtnShadowDarkColor, 30%);
-      color: fade(@subscriptionTxtColor, 30%);
     }
   }
 }

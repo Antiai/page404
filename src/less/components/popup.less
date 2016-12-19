@@ -1,0 +1,32 @@
+.popup {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: fade(@popupBackgroundColor, 50%);
+
+  &-container {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  &-open {
+    display: block;
+    animation: showSearch 500ms ease-out;
+  }
+}
+
+@keyframes showSearch {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -13,7 +13,7 @@
     flex-wrap: wrap;
   }
 
-  @media @mobileOnly{
+  @media @mobileOnly {
     padding-top: 8px;
     padding-right: @mobileSideOffset;
     padding-left: @mobileSideOffset;
@@ -35,8 +35,8 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    transform-origin: top;
     background-color: @menuItemBackgroundColor;
-
 
     @media @tabletOnly {
       padding-top: 30px;
@@ -61,20 +61,38 @@
 
     @media @beforeDesktop {
       top: 100%;
-      order: 1;
-      width: 100%;
       right: 0;
       left: 0;
-
+      order: 1;
+      width: 100%;
     }
 
     &-open {
+      animation: menuDown;
+      animation-timing-function: ease-out;
+
       @media @middleOnly {
         display: block;
+        animation-duration: 800ms;
       }
 
       @media @middleToDesktop {
         display: flex;
+        animation-duration: 500ms;
+        visibility: visible;
+      }
+    }
+
+    &-open li {
+      animation-name: showItems;
+      animation-timing-function: ease-out;
+
+      @media @middleOnly {
+        animation-duration: 800ms;
+      }
+
+      @media @middleToDesktop {
+        animation-duration: 500ms;
       }
     }
 
@@ -125,10 +143,10 @@
   }
 
   &-item {
-    z-index: 2;
     font-family: "Avenir Next LT Pro", "Tahoma", sans-serif;
     font-size: 16px;
     line-height: 1em;
+    z-index: 2;
     text-transform: uppercase;
     color: @menuTxtColor;
     background-color: @menuItemBackgroundColor;
@@ -156,8 +174,8 @@
 
   &-link {
     font-weight: bold;
-    color: inherit;
     transition: opacity 200ms ease-out;
+    color: inherit;
 
     &:hover {
       opacity: 0.6;
@@ -180,7 +198,7 @@
       margin-bottom: -8px;
     }
 
-    @media @desktop{
+    @media @desktop {
       margin-top: 15px;
       margin-left: 57px;
     }
@@ -196,5 +214,57 @@
 
   &-search-icon {
     display: block;
+  }
+}
+
+@keyframes menuDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  60% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes menuUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes showItems {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideItems {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

@@ -1,0 +1,85 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-width: @minWidth;
+  max-width: @maxContentWidth;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media @mobileOnly {
+    padding-right: @mobileSideOffset;
+    padding-left: @mobileSideOffset;
+  }
+
+  @media @tablet {
+    padding-right: @tabletSideOffset;
+    padding-left: @tabletSideOffset;
+  }
+
+  &-label {
+    display: none;
+  }
+
+  &-field {
+    font-family: inherit;
+
+    @media @mobileOnly {
+      flex-basis: 85%;
+      min-height: 40px;
+    }
+
+    @media @tabletOnly {
+      flex-basis: 70%;
+    }
+
+    @media @tablet {
+      font-size: 16px;
+      min-height: 50px;
+    }
+
+    @media @desktop {
+      flex-basis: 60%;
+    }
+  }
+
+  &-btn {
+    transition: box-shadow 150ms ease-out;
+    border: none;
+    background-color: @searchBtnBackgroundColor;
+
+    @media @mobileOnly {
+      width: 45px;
+    }
+
+    @media @tablet {
+      width: 55px;
+    }
+
+    &:hover {
+      box-shadow: inset 2px 2px 2px fade(@searchBtnShadowLightColor, 30%),
+      inset -2px -2px 2px fade(@searchBtnShadowDarkColor, 30%);
+    }
+
+    &:active {
+      box-shadow: inset -2px -2px 2px fade(@searchBtnShadowLightColor, 30%),
+      inset 2px 2px 2px fade(@searchBtnShadowDarkColor, 30%);
+    }
+
+    &:hover svg {
+      fill: @searchBtnIconFillHoverColor;
+    }
+
+    &:active svg {
+      fill: @searchBtnIconFillActiveColor;
+    }
+  }
+
+  &-icon {
+    display: block;
+    fill: @searchBtnIconFillColor;
+    margin-right: auto;
+    margin-left: auto;
+    transition: fill 200ms ease-out;
+  }
+}
