@@ -1,5 +1,5 @@
 "use strict";
-document.addEventListener("DOMContentLoaded", ev => {
+document.addEventListener("DOMContentLoaded", function(event) {
 
   //#Menu
 
@@ -76,22 +76,25 @@ document.addEventListener("DOMContentLoaded", ev => {
     }
   }
 
-  function closeSearch() {
+  // function closeSearch() {
+  //   event.preventDefault();
+  //   if (event.target.classList.contains("popup-open")) {
+  //     popup.classList.remove("popup-open");
+  //   }
+  // }
+
+  searchBtn.addEventListener("click", function(event) {
+    openSearch(event);
+  });
+
+  searchLink.addEventListener("click", function(event) {
+    openSearch(event);
+  });
+
+  popup.addEventListener("click", function(event) {
     event.preventDefault();
     if (event.target.classList.contains("popup-open")) {
       popup.classList.remove("popup-open");
     }
-  }
-
-  searchBtn.addEventListener("click", function(event) {
-    openSearch();
-  });
-
-  searchLink.addEventListener("click", function(event) {
-    openSearch();
-  });
-
-  popup.addEventListener("click", function(event) {
-    closeSearch();
   });
 });
