@@ -128,6 +128,13 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    "gh-pages": {
+      options: {
+        base: "build",
+      },
+      src: ["**"]
+    }
   });
 
   grunt.registerTask("deploy", ["less", "postcss"]);
