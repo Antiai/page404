@@ -429,37 +429,37 @@ label {
   font-family: "Avenir Next LT Pro";
   font-weight: normal;
   font-style: normal;
-  src: url("../fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../fonts/AvenirNextLTPro-Regular.otf") format("OpenType");
+  src: url("../fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Avenir Next LT Pro";
   font-weight: bold;
   font-style: normal;
-  src: url("../fonts/AvenirNextLTPro-BoldCn.woff") format("woff"), url("../fonts/AvenirNextLTPro-BoldCn.woff2") format("woff2"), url("../fonts/AvenirNextLTPro-BoldCn.otf") format("OpenType");
+  src: url("../fonts/AvenirNextLTPro-BoldCn.woff") format("woff"), url("../fonts/AvenirNextLTPro-BoldCn.woff2") format("woff2");
 }
 @font-face {
   font-family: "Avenir Black";
   font-weight: bold;
   font-style: normal;
-  src: url("../fonts/Avenir-Black-webfont.woff") format("woff"), url("../fonts/Avenir-Black-webfont.woff2") format("woff2"), url("../fonts/Avenir-Black-webfont.otf") format("OpenType");
+  src: url("../fonts/Avenir-Black-webfont.woff") format("woff"), url("../fonts/Avenir-Black-webfont.woff2") format("woff2");
 }
 @font-face {
   font-family: "Kabel LT Std";
   font-weight: bold;
   font-style: normal;
-  src: url("../fonts/KabelLTStd-Black.woff") format("woff"), url("../fonts/KabelLTStd-Black.woff2") format("woff2"), url("../fonts/KabelLTStd-Black.otf") format("OpenType");
+  src: url("../fonts/KabelLTStd-Black.woff") format("woff"), url("../fonts/KabelLTStd-Black.woff2") format("woff2");
 }
 @font-face {
   font-family: "Times New Roman";
   font-weight: normal;
   font-style: normal;
-  src: url("../fonts/TimesNewRomanRegular.woff") format("woff"), url("../fonts/TimesNewRomanRegular.woff2") format("woff2"), url("../fonts/TimesNewRomanRegular.otf") format("OpenType");
+  src: url("../fonts/TimesNewRomanRegular.woff") format("woff"), url("../fonts/TimesNewRomanRegular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Nunito Sans";
   font-weight: bold;
   font-style: normal;
-  src: url("../fonts/NunitoSans-ExtraBold.woff") format("woff"), url("../fonts/NunitoSans-ExtraBold.woff2") format("woff2"), url("../fonts/NunitoSans-ExtraBold.otf") format("OpenType");
+  src: url("../fonts/NunitoSans-ExtraBold.woff") format("woff"), url("../fonts/NunitoSans-ExtraBold.woff2") format("woff2");
 }
 .header {
   position: relative;
@@ -617,10 +617,6 @@ label {
   animation: menuDown;
   animation-timing-function: ease-out;
 }
-.menu-items-open li {
-  animation-name: showItems;
-  animation-timing-function: ease-out;
-}
 .menu-items-js::before {
   position: absolute;
   z-index: 2;
@@ -668,6 +664,10 @@ label {
 .menu-link:active {
   opacity: 0.3;
 }
+.menu-link-open {
+  animation-name: showItems;
+  animation-timing-function: ease-out;
+}
 .menu-search {
   z-index: 1;
   transition: opacity 200ms ease-out;
@@ -689,17 +689,6 @@ label {
     transform: translateY(0);
   }
 }
-@keyframes menuUp {
-  0% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
 @keyframes showItems {
   0% {
     opacity: 0;
@@ -709,17 +698,6 @@ label {
   }
   100% {
     opacity: 1;
-  }
-}
-@keyframes hideItems {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
   }
 }
 .logo {
@@ -734,7 +712,6 @@ label {
 }
 .logo-image {
   display: block;
-  height: auto;
   transition: opacity 200ms ease-out;
 }
 .hamburger-btn {
@@ -1003,7 +980,6 @@ label {
 }
 .sister-content-logo {
   display: block;
-  height: auto;
 }
 .sister-content-links {
   margin: 0;
@@ -1103,7 +1079,6 @@ label {
 }
 .social-footer-icon {
   fill: #b5b5b5;
-  width: auto;
 }
 .subscription {
   padding-bottom: 26px;
@@ -1251,6 +1226,7 @@ label {
   font-family: inherit;
   padding-right: 8px;
   padding-left: 8px;
+  border: none;
 }
 .search-btn {
   transition: box-shadow 150ms ease-out;
@@ -1287,12 +1263,12 @@ label {
     animation-duration: 500ms;
     visibility: visible;
   }
-  .menu-items-open li {
-    animation-duration: 500ms;
-  }
   .menu-items-js {
     padding-right: 20px;
     padding-left: 20px;
+  }
+  .menu-link-open {
+    animation-duration: 500ms;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1373,7 +1349,7 @@ label {
     box-shadow: 0 4px 6px #e8e8e8;
   }
   .popular-content-link-arrow {
-    max-width: 270px;
+    max-width: 280px;
   }
   .popular-content-link-arrow::after {
     right: 20px;
@@ -2009,13 +1985,13 @@ label {
     display: block;
     animation-duration: 800ms;
   }
-  .menu-items-open li {
-    animation-duration: 800ms;
-  }
   .menu-link-wrapper {
     width: 90px;
     margin-right: auto;
     margin-left: auto;
+  }
+  .menu-link-open {
+    animation-duration: 800ms;
   }
 }
 @media screen and (max-width: 1023px) {
@@ -2042,6 +2018,12 @@ label {
     height: 9px;
     content: "";
     background-color: #fff;
+  }
+  .menu-link {
+    display: none;
+  }
+  .menu-link-open {
+    display: block;
   }
   .hamburger {
     position: relative;
