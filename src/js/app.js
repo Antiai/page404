@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   let hamburgerBtn = document.querySelector(".hamburger-btn");
   let menu = document.querySelector(".menu-items");
+  let menuLink = document.querySelectorAll(".menu-link");
 
   if (!menu.classList.contains("menu-items-js")) {
     menu.classList.add("menu-items-js");
@@ -18,11 +19,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     hamburgerBtn.classList.remove("hamburger-btn-cross");
   }
 
-
   hamburgerBtn.addEventListener("click", function(event) {
     event.preventDefault();
     hamburgerBtn.classList.toggle("hamburger-btn-cross");
     menu.classList.toggle("menu-items-open");
+    for (let i = 0; i < menuLink.length; i++) {
+      menuLink[i].classList.add("menu-link-open");
+    }
   });
 
   window.addEventListener("keydown", function(event) {
@@ -30,37 +33,55 @@ document.addEventListener("DOMContentLoaded", function(event) {
       hamburgerBtn.classList.remove("hamburger-btn-cross");
       menu.classList.remove("menu-items-open");
       popup.classList.remove("popup-open");
+      for (let i = 0; i < menuLink.length; i++) {
+        menuLink[i].classList.remove("menu-link-open");
+      }
     };
   });
 
   //#Pinterest
 
   let pinterestBtn = document.querySelectorAll(".share-btn");
-  let images = document.querySelectorAll(".popular-content-image");
+  let pics = document.querySelectorAll(".popular-content-image");
+  let popContent = document.querySelector(".popular-content-wrapper");
 
-  for (let i = 0; i < images.length; i++) {
-    images[i].addEventListener("mouseenter", function(event) {
-      event.preventDefault();
-      if (!pinterestBtn[i].classList.contains("share-btn-hover")) {
-        pinterestBtn[i].classList.add("share-btn-hover");
+  function showPin(arg) {
+    pics[arg].addEventListener("mouseenter", function() {
+      if (!pinterestBtn[arg].classList.contains("share-btn-hover")) {
+        pinterestBtn[arg].classList.add("share-btn-hover");
       };
     });
-    images[i].addEventListener("mouseleave", function(event) {
-      event.preventDefault();
-      if (pinterestBtn[i].classList.contains("share-btn-hover")) {
-        pinterestBtn[i].classList.remove("share-btn-hover");
+  }
+
+  function hidePin(arg) {
+    pics[arg].addEventListener("mouseleave", function() {
+      if (pinterestBtn[arg].classList.contains("share-btn-hover")) {
+        pinterestBtn[arg].classList.remove("share-btn-hover");
       };
     });
-    pinterestBtn[i].addEventListener("mouseenter", function() {
-      if (!pinterestBtn[i].classList.contains("share-btn-hover")) {
-        pinterestBtn[i].classList.add("share-btn-hover");
+  }
+
+  function lockPin(arg) {
+    pinterestBtn[arg].addEventListener("mouseenter", function() {
+      if (!pinterestBtn[arg].classList.contains("share-btn-hover")) {
+        pinterestBtn[arg].classList.add("share-btn-hover");
       };
     });
-    pinterestBtn[i].addEventListener("mouseleave", function() {
-      if (pinterestBtn[i].classList.contains("share-btn-hover")) {
-        pinterestBtn[i].classList.remove("share-btn-hover");
+  }
+
+  function releasePin(arg) {
+    pinterestBtn[arg].addEventListener("mouseleave", function() {
+      if (pinterestBtn[arg].classList.contains("share-btn-hover")) {
+        pinterestBtn[arg].classList.remove("share-btn-hover");
       };
     });
+  }
+
+  for (let i = 0; i < pics.length; i++) {
+    showPin(i);
+    hidePin(i);
+    lockPin(i);
+    releasePin(i);
   };
 
   //#Search
@@ -75,13 +96,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       popup.classList.add("popup-open");
     }
   }
-
-  // function closeSearch() {
-  //   event.preventDefault();
-  //   if (event.target.classList.contains("popup-open")) {
-  //     popup.classList.remove("popup-open");
-  //   }
-  // }
 
   searchBtn.addEventListener("click", function(event) {
     openSearch(event);

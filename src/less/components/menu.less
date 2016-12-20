@@ -83,19 +83,6 @@
       }
     }
 
-    &-open li {
-      animation-name: showItems;
-      animation-timing-function: ease-out;
-
-      @media @middleOnly {
-        animation-duration: 800ms;
-      }
-
-      @media @middleToDesktop {
-        animation-duration: 500ms;
-      }
-    }
-
     &-js {
       .addHeaderPaper();
 
@@ -177,12 +164,33 @@
     transition: opacity 200ms ease-out;
     color: inherit;
 
+    @media @beforeDesktop {
+      display: none;
+    }
+
     &:hover {
       opacity: 0.6;
     }
 
     &:active {
       opacity: 0.3;
+    }
+
+    &-open {
+      animation-name: showItems;
+      animation-timing-function: ease-out;
+
+      @media @middleOnly {
+        animation-duration: 800ms;
+      }
+
+      @media @middleToDesktop {
+        animation-duration: 500ms;
+      }
+
+      @media @beforeDesktop {
+        display: block;
+      }
     }
   }
 
@@ -227,20 +235,6 @@
   }
 }
 
-@keyframes menuUp {
-  0% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
 @keyframes showItems {
   0% {
     opacity: 0;
@@ -252,19 +246,5 @@
 
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes hideItems {
-  0% {
-    opacity: 1;
-  }
-
-  40% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
   }
 }
