@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let title = popLink[arg].innerHTML;
     let text = popText[arg].innerHTML;
     let desc = title + "\r\n" + text;
-    let mediaLink = window.location.origin + "/" + pics[arg].getAttribute("src");
+    let mediaLink = document.location.href + "/" + pics[arg].getAttribute("src");
     let url = popLink[arg].getAttribute("href");
 
     function setProp(attr, value) {
