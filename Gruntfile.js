@@ -90,6 +90,18 @@ module.exports = function(grunt) {
       }
     },
 
+    babel: {
+      options: {
+        sourceMap: true,
+        presets: ['es2015']
+      },
+      files: {
+        expand: true,
+        src: ['build/js/app.js'],
+        dest: ''
+      }
+    },
+
     uglify: {
       options: {
         mangle: false
@@ -145,6 +157,7 @@ module.exports = function(grunt) {
     "postcss",
     "copy",
     "csso",
+    "babel",
     "uglify",
     "replace",
     "imagemin"

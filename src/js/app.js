@@ -1,6 +1,5 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", function(event) {
-
   //#Menu
 
   let hamburgerBtn = document.querySelector(".hamburger-btn");
@@ -44,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   let pinterestBtn = document.querySelectorAll(".share-btn");
   let pics = document.querySelectorAll(".popular-content-image");
   let popContent = document.querySelector(".popular-content-wrapper");
+  let popLink = document.querySelectorAll(".popular-content-link");
+  let popText = document.querySelectorAll(".popular-content-link-arrow");
 
   function showPin(arg) {
     pics[arg].addEventListener("mouseenter", function() {
@@ -77,11 +78,38 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   }
 
+  //##Change attributes for Buttons
+
+  function setLinkAttr(arg) {
+    let title = popLink[arg].innerHTML;
+    let text = popText[arg].innerHTML;
+    let desc = title + "\r\n" + text;
+    let mediaLink = window.location.origin + "/" + pics[arg].getAttribute("src");
+    let url = popLink[arg].getAttribute("href");
+
+    function setProp(attr, value) {
+      if (!pinterestBtn[arg].hasAttribute(attr)){
+        pinterestBtn[arg].setAttribute(attr, value);
+      }
+    }
+
+    pinterestBtn[arg].setAttribute("href", "https://www.pinterest.com/pin/create/button/");
+
+    setProp("data-pin-custom", "true");
+    setProp("data-pin-do", "buttonPin");
+    setProp("data-pin-description", desc);
+    setProp("data-pin-media", mediaLink);
+    setProp("data-pin-url", url);
+  }
+
+  //##Call pinterest functions
+
   for (let i = 0; i < pics.length; i++) {
     showPin(i);
     hidePin(i);
     lockPin(i);
     releasePin(i);
+    setLinkAttr(i);
   };
 
   //#Search
@@ -111,4 +139,56 @@ document.addEventListener("DOMContentLoaded", function(event) {
       popup.classList.remove("popup-open");
     }
   });
+
+  //#Swiper init
+
+  let mySwiper = new Swiper(".swiper-container", {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 17,
+    centeredSlides: true,
+    autoplay: 2500,
+    autoplayDisableOnInteraction: true,
+    loop: true,
+  });
+
+  //##Mediaqueries for swiper
+
+  if (matchMedia) {
+    let mq = window.matchMedia( "(min-width: 768px)" );
+    mq.addListener(WidthChange);
+    WidthChange(mq);
+  }
+
+  function WidthChange(mq) {
+    if (mq.matches) {
+      mySwiper.destroy(true, true);
+    }
+  }
+
+  if (matchMedia) {
+    let mqmax = window.matchMedia( "(max-width: 767px)" );
+    mqmax.addListener(WidthChanges);
+    WidthChanges(mqmax);
+  }
+
+  function WidthChanges(mqmax) {
+    if (mqmax.matches) {
+      mySwiper = new Swiper(".swiper-container", {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 17,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: true,
+        loop: true,
+      });
+    }
+  }
 });
